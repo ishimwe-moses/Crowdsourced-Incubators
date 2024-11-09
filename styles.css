@@ -1,0 +1,990 @@
+
+body {
+    background-color: rgb(0, 4, 4);
+}
+
+
+.logo {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.logo img {
+    height: 80px; 
+    width: auto;
+    object-fit: contain;
+}
+
+
+header {
+    position: sticky;
+    top:0;
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    height:auto;
+    z-index:5;
+    display: flex;               
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 10px 20px;
+    background-color: #0a0101;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.header-links {
+    display: flex;
+    gap: 20px; 
+}
+
+.header-links a {
+    text-decoration: none;
+    color: hsl(0, 25%, 90%);
+    padding: 12px;
+    font-weight: 500;
+}
+
+
+.ideas-button {
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 8px 16px;
+}
+
+
+.dropdown-links {
+    position: relative;
+    display: inline-block;
+}
+
+.ideas-links {
+    display: none;
+    position: absolute;
+    
+    z-index: 1;
+    background-color: rgb(4, 37, 41);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.ideas-links a {
+    display: block;
+    color: white;
+    padding: 8px 0;
+    text-decoration: none;
+}
+
+.dropdown-links:hover .ideas-links {
+    display: block;
+}
+
+
+.login-sign-buttons {
+    display: flex;
+ 
+}
+
+.sign-button {
+    border: 2px solid rgb(1, 75, 81);
+    background-color: rgb(4, 115, 125);
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    border-bottom-left-radius: 1%;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 1%;
+    border-top-right-radius: 0%;
+    border-right:darkcyan;
+    border-width:0px;
+    margin-right:-18px;
+    font-weight: 600;
+    z-index:3;
+}
+.sign-button:hover {
+    background-color: rgb(45, 196, 209);
+    transition-duration: 1000ms;
+    transform: scale(1.05);
+}
+.login-button {
+    border: 2px solid rgb(1, 75, 81);
+    background-color: rgb(1, 75, 81);
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 600;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 1%;
+    transform: scale(1.21);
+}
+
+.login-button:hover {
+    background-color: rgb(203, 219, 221);
+    transition-duration: 1000ms;
+   
+    
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .header-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 60px; 
+    }
+
+    .login-sign-buttons {
+        margin-top: 10px;
+    }
+}
+.intro {
+    background-color: rgb(2, 37, 41); 
+    color: white; 
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.5em; 
+    margin-bottom: 20px;
+}
+
+.intro-content {
+    max-width: 800px; 
+    margin: 0 auto; 
+    font-size: 1em; 
+    line-height: 1.6; 
+}
+
+.get-started-button {
+    background-color: rgb(4, 115, 125); 
+    color: white; 
+    padding: 12px 24px; 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; 
+    margin-top: 20px; 
+}
+
+.get-started-button:hover {
+    background-color: rgb(1, 75, 81); 
+}
+.features {
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap:wrap;
+}
+
+.feature {
+    max-width: 220px; 
+    margin: 2px;
+}
+
+.feature img {
+    width: 150px; 
+    height: auto; 
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.feature p,h2,h3 {
+    font-size: 1em;
+    color: hsl(0, 25%, 90%);
+    text-align: center;
+}
+.feature:hover {
+    transform: scale(1.05); 
+    cursor:pointer;
+}
+.categories {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgb(1, 75, 81); 
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+.category {
+    max-width: 220px; 
+    margin: 20px;
+    background-color: rgb(24, 21, 21); 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    transition: transform 0.3s; 
+}
+
+.category:hover {
+    transform: scale(1.05); 
+    cursor:pointer;
+}
+
+.category-icon {
+    width: 60px; 
+    height: 60px; 
+    margin-bottom: 10px;
+   
+    
+}
+
+.category h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.category p {
+    font-size: 0.9em;
+    color: hsl(179, 94%, 35%);
+}
+@media (max-width: 768px) {
+    .category-list {
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+.idea-feed {
+    padding: 40px 20px;
+    background-color: rgb(1, 75, 81);  
+}
+.idea-feed h2{
+    color:rgb(248, 243, 243);background-color:black;font-size:xx-large;border-radius:14px
+}
+.idea-list {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+   
+}
+
+.idea-card {
+    background-color: rgb(9, 3, 3); 
+    border-radius: 15px; 
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s; 
+    cursor:pointer;
+}
+
+.idea-card:hover {
+    transform: scale(1.02); /
+}
+
+.idea-card h3{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color:rgb(236, 226, 226)
+}
+
+.idea-card p {
+    font-size: 1em;
+    color: hsl(179, 94%, 35%);
+    margin-bottom: 15px; 
+}
+
+.idea-meta {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.profile-pic {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
+.username {
+    font-weight: bold;
+}
+
+.idea-stats span {
+    margin-left: 15px; 
+}
+
+.tags {
+    margin-top: 10px; }
+
+.tag {
+    display: inline-block;
+    background-color: rgb(2, 37, 41);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-right: 5px; 
+}
+@media (max-width: 768px) {
+    .idea-list {
+        flex-direction: column;
+    }
+
+    .idea-card {
+        padding: 15px; 
+    }
+}
+.idea-submission {
+    padding: 40px 20px;
+    background-color: #becad6; 
+}
+
+.submission-guidelines {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.submission-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column; 
+}
+
+label {
+    margin-bottom: 5px; 
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical; /*vertical resizing */
+}
+
+.submit-button {
+    padding: 12px;
+    background-color: rgb(2, 37, 41); /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+.submit-button:hover {
+    background-color: rgb(4, 115, 125); /* Darker shade on hover */
+}
+@media (max-width: 768px) {
+    .submission-form {
+        gap: 10px; /* To Reduce space between fields on smaller screens */
+    }
+}
+.idea-detail {
+    padding: 40px 20px;
+    background-color: #ffffff; /* White background for readability */
+    border: 1px solid #ccc; /* Light border around the idea section */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 800px; /* Maximum width for the idea detail */
+    margin: 20px auto; /* Center the section */
+}
+
+.idea-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color:#0a0101;
+}
+
+.idea-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.idea-description {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.idea-media img,
+.idea-media video {
+    width: 100%;
+    padding:12px;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: block;
+}
+
+.creator-info {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.creator-pic {
+    border-radius: 50%; /* Circular profile picture */
+    width: 50px; /* Fixed size */
+    height: 50px; /* Fixed size */
+    margin-right: 10px;
+}
+
+.voting-engagement {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.vote-button {
+    border: none;
+    background-color: rgb(2, 37, 41);
+    color: white;
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.follow-button {
+    padding: 10px 15px;
+    background-color: rgb(4, 115, 125);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.share-facebook {
+    padding: 10px 15px;
+    background-color: #41689c;
+    color: white;
+    font-family:  Klavika Bold;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; /* Rounded corners */
+    font-size: 35px;
+    margin:2px;
+   
+}
+.share-twitter {
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    font-family:  Klavika Bold;
+    font-style:normal;
+    font-weight: 600;
+    font-size: 30px;
+    margin:12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+   
+}
+.discussion-section {
+    margin-top: 40px;
+    
+}
+.discussion-section h3{
+    color:#0a0101;
+}
+.comments {
+    margin-bottom: 20px;
+}
+
+.comment {
+    margin-bottom: 10px;
+    background-color: #f1f1f1; /* Light gray background for comments */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for comments */
+}
+
+.reply-button {
+    background-color: rgb(2, 37, 41);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 5px;
+}
+
+.comment-form {
+    margin-top: 20px;
+}
+
+.comment-form textarea {
+    width: 100%; /* Full width for textarea */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border for textarea */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.submit-comment {
+    padding: 10px 15px;
+    background-color: rgb(4, 115, 125);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px;
+}
+
+.collaborator-invite {
+    padding: 10px 15px;
+    background-color: rgb(2, 37, 41);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .idea-detail {
+        padding: 20px 10px; /* Reduce padding on smaller screens */
+    }
+
+    .vote-button, .follow-button, .share-buttons button, .submit-comment, .collaborator-invite {
+        width: 100%; /* Make buttons full width on smaller screens */
+        margin-top: 5px; /* Add space between buttons */
+    }
+}
+.cta-banner {
+    background-color: rgb(2, 37, 41); /* Dark background for emphasis */
+    color: white; /* White text for contrast */
+    padding: 40px 20px; /* Padding around the content */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Margin for spacing from other sections */
+}
+
+.cta-title {
+    font-size: 2.5em; /* Larger font size for the main title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.cta-subtitle {
+    font-size: 1.2em; /* Slightly smaller font for the subtitle */
+    margin-bottom: 20px; /* Space below the subtitle */
+}
+
+.cta-buttons {
+    display: flex; /* Flexbox for button alignment */
+    justify-content: center; /* Center the buttons */
+    gap: 15px; /* Space between buttons */
+}
+
+.cta-button {
+    background-color: rgb(4, 115, 125); /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default button border */
+    padding: 12px 25px; /* Padding inside buttons */
+    font-size: 1em; /* Font size for buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cta-button:hover {
+    background-color: rgb(1, 75, 81); /* Darker shade on hover */
+}
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2em; /* Smaller title font on mobile */
+    }
+
+    .cta-subtitle {
+        font-size: 1em; /* Smaller subtitle font on mobile */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* Reduce padding for mobile buttons */
+    }
+}
+.testimonials {
+    background-color: rgb(240, 240, 240); /* Light background for contrast */
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center text alignment */
+}
+
+.testimonials-title {
+    font-size: 2em; /* Font size for the title */
+    margin-bottom: 30px; /* Space below the title */
+    color: rgb(2, 37, 41); /* Color for the title */
+}
+
+.testimonial-container {
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack testimonials vertically */
+    align-items: center; /* Center items */
+}
+
+.testimonial-card {
+    background-color: white; /* White background for testimonials */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding inside each card */
+    margin: 10px; /* Margin between cards */
+    max-width: 300px; /* Max width for responsive design */
+}
+
+.user-photo {
+    border-radius: 50%; /* Circular profile photo */
+    width: 80px; /* Fixed width for photos */
+    height: 80px; /* Fixed height for photos */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space below photo */
+}
+
+.testimonial-quote {
+    font-style: italic; /* Italic style for quotes */
+    margin-bottom: 10px; /* Space below quote */
+    color: rgb(2, 37, 41); /* Color for quote text */
+}
+
+.user-name {
+    font-weight: bold; /* Bold style for user name */
+    color: rgb(1, 75, 81); /* Color for user name */
+}
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column; /* Stack items on smaller screens */
+    }
+}
+
+.blog-insights {
+    background-color: rgb(245, 245, 245); /* Light background for the blog section */
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center align the text */
+    overflow: auto;
+    align-items: flex-start;
+    
+    
+}
+
+.blog-title {
+    font-size: 2em; /* Font size for the section title */
+    margin-bottom: 30px; /* Space below the title */
+    color: rgb(2, 37, 41); /* Title color */
+}
+
+.blog-container {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: center; /* Center align items */
+}
+
+.blog-post {
+    background-color: white; /* White background for blog posts */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 15px; /* Margin between posts */
+    padding: 20px; /* Padding inside each post */
+    max-width: 300px; /* Max width for responsive design */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.blog-post:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.blog-image {
+    
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+.post-title {
+    font-size: 1.5em; /* Font size for the post title */
+    margin: 10px 0; /* Space around the title */
+    color:black
+}
+
+.post-excerpt {
+    font-size: 1em; /* Font size for the post excerpt */
+    margin-bottom: 15px; /* Space below the excerpt */
+    color: rgb(80, 80, 80); /* Subtle color for the excerpt */
+}
+
+.read-more {
+    text-decoration: none; /* Remove underline */
+    color: rgb(4, 115, 125); /* Color for the read more link */
+    font-weight: bold; /* Bold style for emphasis */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    
+}
+
+.read-more:hover {
+    color: rgb(1, 75, 81); /* Darker shade on hover */
+}
+@media (max-width: 768px) {
+    .blog-post {
+        max-width: 90%; /* Allow for wider posts on smaller screens */
+    }
+}
+.email-subscription {
+    background-color: rgb(2, 37, 41); /* Dark background for contrast */
+    color: white; /* Text color for readability */
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center align the text */
+    margin-top: 0%;
+}
+
+.subscription-title {
+    font-size: 2em; /* Font size for the title */
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.subscription-text {
+    font-size: 1.2em; /* Font size for the description */
+    margin-bottom: 20px; /* Space below the description */
+}
+
+.subscription-form {
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center align form elements */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Space above the form */
+}
+
+.email-input {
+    padding: 10px; /* Padding inside the input field */
+    font-size: 1em; /* Font size for input text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between input and button */
+    width: 300px; /* Fixed width for the input field */
+}
+
+.subscribe-button {
+    background-color: rgb(4, 115, 125); /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.subscribe-button:hover {
+    background-color: rgb(1, 75, 81); /* Darker shade on hover */
+}
+@media (max-width: 768px) {
+    .subscription-form {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+    
+    .email-input {
+        width: 100%; /* Full width for input on smaller screens */
+        margin-bottom: 10px; /* Space below the input */
+    }
+}
+.footer {
+    
+      
+    background-color: rgb(2, 37, 41); /* Dark background for footer */
+    color: white; /* Text color for readability */
+    padding: 40px 20px; /* Padding around the footer */
+    text-align: center; /* Center align text */
+    margin-top: auto;
+    
+}
+
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: space-between; /* Space between columns */
+    margin-bottom: 20px; /* Space below the content */
+}
+
+.quick-links,
+.social-media,
+.secondary-nav {
+    flex: 1; /* Allow equal width for each section */
+    margin: 10px; /* Space between sections */
+    min-width: 200px; /* Minimum width for smaller screens */
+}
+
+h3 {
+    margin-bottom: 10px; /* Space below section headings */
+}
+
+ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    margin: 5px 0; /* Space between list items */
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Link color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    color: rgb(4, 115, 125); /* Change color on hover */
+}
+
+.social-media img {
+    width: 30px; /* Icon size */
+    margin: 0 5px; /* Space between icons */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Space above copyright text */
+}
+
+
+
+
+
+
+
+
+.blog-insights {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.blog-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.blog-post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 18rem;
+    text-align: left;
+}
+
+.blog-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    color: #222;
+    margin: 1rem;
+}
+
+.post-excerpt {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 1rem 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* The overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
+    overflow: auto;
+    padding-top: 50px;
+}
+
+/* The content inside the overlay */
+.overlay-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    color: #333;
+}
+
+/* Close button inside overlay */
+.close-btn {
+    color: #aaa;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    .overlay-content {
+        width: 90%;
+    }
+}

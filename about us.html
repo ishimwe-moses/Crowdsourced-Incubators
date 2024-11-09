@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Crowdsourced Idea Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            background-color: rgb(2, 37, 41);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* Close Button */
+        .close-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* 3D Scrollable Content */
+        .content {
+            perspective: 800px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100vh;
+            scroll-snap-type: y mandatory;
+            padding-left: 20px; /* space for the scrollbar */
+            padding-right: 20px; /* space for the scrollbar */
+        }
+
+        /* Section Styling */
+        .section {
+            scroll-snap-align: start;
+            width: 80%;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #0a0101;
+            border-radius: 10px;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: rotateX(5deg) translateZ(-100px);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        /* Indicator Circle */
+        .indicator {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            width: 12px;
+            height: 12px;
+            background-color: #6f42c1;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            transition: background-color 0.3s ease;
+        }
+
+        /* Section Content Styling */
+        h2 {
+            font-size: 2rem;
+            color: #6f42c1;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: center;
+            color: #eee;
+        }
+
+        /* Active 3D Effect */
+        .section.active {
+            transform: translateZ(0) rotateX(0deg);
+            opacity: 1;
+        }
+
+        /* Circular Indicator Highlight */
+        .section.active .indicator {
+            background-color: #ff4c4c;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            color: #6f42c1;
+            background-color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #5a2d9b;
+            color: #fff;
+        }
+
+        /* Custom Dual Scrollbars */
+        .content::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .content::-webkit-scrollbar-track {
+            background: rgb(2, 37, 41);
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background-color: #6f42c1;
+            border-radius: 6px;
+            border: 3px solid rgb(2, 37, 41);
+        }
+
+        /* Adding Left Scrollbar */
+        .content::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
+        .content {
+            overflow-y: scroll;
+            scrollbar-color: #6f42c1 rgb(2, 37, 41);
+            scrollbar-width: thin;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .section {
+                width: 90%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Close Button -->
+    <button class="close-button" onclick="window.location.href='index.html'"><i class="fas fa-times"></i></button>
+
+    <div class="content" id="content">
+        <!-- About Us Section -->
+        <div class="section" id="about">
+            <div class="indicator"></div>
+            <h2>About Us</h2>
+            <p>Turn Your Ideas into Reality with the Power of Crowdsourcing</p>
+            <p>Where community meets creativity to make impactful ideas flourish.</p>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="section" id="mission">
+            <div class="indicator"></div>
+            <h2>Our Mission</h2>
+            <p>Our mission is to empower you to bring innovative ideas to life by connecting with a passionate community.</p>
+        </div>
+
+        <!-- Values Section -->
+        <div class="section" id="values">
+            <div class="indicator"></div>
+            <h2>Our Values</h2>
+            <p>Collaboration, innovation, and inclusivity. We aim to support and respect each creative idea.</p>
+        </div>
+
+        <!-- Team Section -->
+        <div class="section" id="team">
+            <div class="indicator"></div>
+            <h2>Meet Our Team</h2>
+            <p>Our diverse team is committed to fostering a platform where ideas can flourish.</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="section" id="cta">
+            <div class="indicator"></div>
+            <h2>Join Us</h2>
+            <p>Ready to make your idea a reality? Join now and start your journey with us!</p>
+            <button class="cta-button" onclick="window.location.href='signup.html'">Join Now</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to add the 3D scroll effect
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

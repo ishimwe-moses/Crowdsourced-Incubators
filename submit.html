@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <title>header</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    
+  </head>
+  
+  <header>
+    <a href="#" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+    <div class="header-links">
+    <a href="index.html">Home</a>
+       <a href="ideas.html">Ideas</a>
+       <a href="how it works.html">How It works</a>
+      <a href="categories">Categories</a>
+      <a href="about us.html">About Us</a>
+      <div class="login-sign-buttons">
+        <a href="login_sign_form.html"><button class="sign-button">Sign Up</button></a>
+        <a href="login_sign_form.html"><button class="login-button">login</button></a>
+        
+        
+          </div>
+  </header>
+  <body>
+    
+    <section class="idea-submission">
+        <h2>Submit Your Idea</h2>
+        <p class="submission-guidelines">Please fill out the form below to submit your idea. Make sure to include all relevant details and follow the guidelines:</p>
+        <ul>
+            <li>Provide a clear and concise title.</li>
+            <li>Select the appropriate category for your idea.</li>
+            <li>Describe your idea in detail.</li>
+            <li>Include tags to help categorize your submission.</li>
+            <li>Upload any supporting media if necessary.</li>
+        </ul>
+    
+        <form class="submission-form">
+            <div class="form-field">
+                <label for="idea-title">Title:</label>
+                <input type="text" id="idea-title" name="title" required>
+            </div>
+            
+            <div class="form-field">
+                <label for="idea-category">Category:</label>
+                <select id="idea-category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="environment">Environment</option>
+                    <option value="technology">Technology</option>
+                    <option value="social-innovation">Social Innovation</option>
+                    <option value="education">Education</option>
+                    <!-- Add more categories as needed -->
+                </select>
+            </div>
+            
+            <div class="form-field">
+                <label for="idea-description">Description:</label>
+                <textarea id="idea-description" name="description" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-field">
+                <label for="idea-tags">Tags:</label>
+                <input type="text" id="idea-tags" name="tags" placeholder="e.g., sustainability, AI">
+            </div>
+            
+            <div class="form-field">
+                <label for="media-upload">Upload Media:</label>
+                <input type="file" id="media-upload" name="media" accept="image/*,video/*,.pdf">
+            </div>
+            
+            <button type="submit" class="submit-button">Submit Idea</button>
+        </form>
+    </section>
+    
+    <section class="blog-insights">
+        <h2 class="blog-title">Insights & Resources</h2>
+        <div class="blog-container">
+            <article class="blog-post">
+                <img src="blog1.jpeg" alt="Blog Post Image" class="blog-image">
+                <h3 class="post-title">5 Tips for Effective Brainstorming</h3>
+                <p class="post-excerpt">Learn how to maximize your brainstorming sessions with these five practical tips to enhance creativity and collaboration.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="blog2.jpeg" alt="Blog Post Image" class="blog-image">
+                <h3 class="post-title">Turning Ideas into Action: A Case Study</h3>
+                <p class="post-excerpt">Discover how a simple idea turned into a successful project through community collaboration and support.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="blog3.jpeg" alt="Blog Post Image" class="blog-image">
+                <h3 class="post-title">The Art of Pitching Your Ideas</h3>
+                <p class="post-excerpt">Master the art of pitching your ideas with these essential strategies to capture attention and inspire action.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+        </div>
+    </section>
+    <section class="email-subscription">
+        <h2 class="subscription-title">Stay Connected!</h2>
+        <p class="subscription-text">Stay updated on the hottest new ideas and community activities.</p>
+        <form class="subscription-form">
+            <input type="email" placeholder="Enter your email address" class="email-input" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a href="terms service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/"><img src="facebook2.gif" alt="Facebook"></a></li>
+                    <li><a href="https://x.com/"><img src="twiter.png" alt="Twitter"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="instagram.gif" alt="Instagram"></a></li>
+                    <li><a href="https://www.linkedin.com/"><img src="linked-in.png" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+            <div class="secondary-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ideas.html">Ideas</a></li>
+                    <li><a href="how it works.html">How It works</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                     <li><a href="login_sign_form.html">Sign Up</a></li>
+                     <li><a href="login_sign_form.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Crowdsourced Idea Incubator. All rights reserved.</p>
+        </div>
+    </footer>
+    
+  </body>
+</html>

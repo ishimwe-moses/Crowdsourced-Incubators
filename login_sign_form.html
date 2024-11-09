@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 37, 41); /* General background color */
+            overflow-x: hidden;
+        }
+
+        /* Container to hold content */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            height: 80vh;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            position: relative;
+        }
+
+        /* Close button (top-right) */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: #333;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        .close-btn:hover {
+            color: #ff6f61;
+        }
+
+        /* Left content (Welcome section) */
+        .left-content {
+            flex: 1;
+            background-color: rgb(4, 37, 41); /* Background color */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 40px;
+            position: relative;
+            background-image: url('https://via.placeholder.com/500'); /* Placeholder background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .left-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .left-content p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .left-content img {
+            width: 80%;
+            margin-top: 20px;
+            max-width: 400px; /* Adjust max size */
+        }
+
+        /* Social buttons */
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .social-buttons button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-buttons button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-buttons button img {
+            width: 40px;
+        }
+
+        /* Text prompt above the buttons */
+        .sign-in-text {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Right content (Forms) */
+        .right-content {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #6f42c1;
+            outline: none;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
+            background-color: #6f42c1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #5a2d9b;
+        }
+
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .left-content {
+                height: auto;
+                padding: 20px;
+            }
+
+            .right-content {
+                padding: 20px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .social-buttons button img {
+                width: 30px;
+                margin-bottom: 10px;
+                padding:20px;
+            }
+
+            .left-content img {
+                max-width: 250px; /* Adjust image size */
+                margin-top: 15px;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+               
+            }
+
+            .form-group button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="login-signup-container">
+        <!-- Left side content (Welcome and social buttons) -->
+        <button class="close-btn" onclick="closeContainer()">×</button>
+        <div class="left-content">
+            <div>
+                <h1>Welcome to Our App</h1>
+                <p>Sign in or create a new account to get started with all the amazing features!</p>
+                <!-- Example GIF to capture user interest -->
+                <img src="incubation.gif" alt="User Engagement GIF"style="width: 150px;">
+                <img src="incubation.gif" alt="User Engagement GIF"style="width: 150px;">
+                <img src="incubation.gif" alt="User Engagement GIF"style="width: 150px;">
+            </div>
+           
+            <div class="sign-in-text">Sign In Using</div>
+            
+            <div class="social-buttons">
+                <button class="google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google Logo">
+                </button>
+                <button class="linkedin">
+                    <img src="linked-in.png" alt="LinkedIn Logo">
+                </button>
+                <button class="github">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo">
+                </button>
+            </div>
+        </div>
+
+        
+        <div class="right-content">
+            <div class="form-container">
+               
+                <div id="login-form">
+                    <h2>Login</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" required placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Login</button>
+                        </div>
+                        <a href="#" class="toggle-link" onclick="toggleForm('sign-up')">Don't have an account? Sign up</a>
+                    </form>
+                </div>
+
+              
+                <div id="sign-up-form" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" id="signup-name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signup-email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" name="password" required placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-birthday">Birth Date</label>
+                            <input type="date" id="signup-birthday" name="birthday" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Sign Up</button>
+                        </div>
+                        <a href="#" class="toggle-link" onclick="toggleForm('login')">Already have an account? Login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const signUpForm = document.getElementById('sign-up-form');
+
+            if (formType === 'sign-up') {
+                loginForm.style.display = 'none';
+                signUpForm.style.display = 'block';
+            } else {
+                loginForm.style.display = 'block';
+                signUpForm.style.display = 'none';
+            }
+        }
+
+        function closeContainer() {
+            const container = document.getElementById('login-signup-container');
+            container.style.display = 'none';
+            
+            window.location.href = 'index.html'; 
+        }
+    </script>
+
+</body>
+</html>

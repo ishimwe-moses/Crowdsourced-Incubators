@@ -1,0 +1,176 @@
+
+<html>
+  <head>
+    <title>header</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="categories.css">
+  </head>
+  
+  <header>
+    <a href="#" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+    <div class="header-links">
+    <a href="index.html">Home</a>
+       <a href="ideas.html">Ideas</a>
+       <a href="how it works.html">How It works</a>
+      <a href="categories.html">Categories</a>
+      <a href="about us.html">About Us</a>
+      <div class="login-sign-buttons">
+        <a href="login_sign_form.html"><button class="sign-button">Sign Up</button></a>
+        <a href="login_sign_form.html"><button class="login-button">login</button></a>
+        
+        
+          </div>
+  </header>
+<body>
+<div class="container mt-5">
+    <div id="categoryCarousel" class="carousel slide" data-bs-interval="60000">
+        <div class="carousel-inner">
+            <!-- Category 1 -->
+            <div class="carousel-item active">
+                <div class="category-card">
+                    <img src="smart agri.jpg" alt="Smart Agriculture">
+                    <div class="category-content">
+                        <h3>Smart Agriculture</h3>
+                        <p>Explore innovative farming solutions using technology to boost agricultural productivity and sustainability.</p>
+                        <button class="learn-more-btn" onclick="showPopup('Smart Agriculture', 'Innovative farming solutions, such as precision farming, vertical farming, and AI-driven crop management, are reshaping the agricultural landscape.')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="carousel-item">
+                <div class="category-card">
+                    <img src="clean energy.jpg" alt="Clean Energy">
+                    <div class="category-content">
+                        <h3>Clean Energy</h3>
+                        <p>Learn about renewable energy solutions that aim to reduce carbon emissions and power the future sustainably.</p>
+                        <button class="learn-more-btn" onclick="showPopup('Clean Energy', 'Clean energy sources like wind, solar, and geothermal power are essential to reducing global carbon emissions and mitigating climate change.')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="carousel-item">
+                <div class="category-card">
+                    <img src="ai health care.jpg" alt="AI Healthcare">
+                    <div class="category-content">
+                        <h3>AI Healthcare</h3>
+                        <p>Discover how AI is revolutionizing healthcare by improving diagnostics, treatment plans, and patient care.</p>
+                        <button class="learn-more-btn" onclick="showPopup('AI Healthcare', 'Artificial Intelligence is transforming healthcare by assisting doctors with diagnostics, predicting patient outcomes, and personalizing treatment.')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Categories -->
+            <div class="carousel-item">
+                <div class="category-card">
+                    <img src="space explor.jpg" alt="Space Exploration">
+                    <div class="category-content">
+                        <h3>Space Exploration</h3>
+                        <p>Explore innovative ideas and missions for discovering new frontiers in outer space and space technologies.</p>
+                        <button class="learn-more-btn" onclick="showPopup('Space Exploration', 'The exploration of space is one of humanity’s most exciting endeavors. This section explores Mars, lunar bases, and new space technologies.')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="category-card">
+                    <img src="smart home.jpg" alt="Smart Cities">
+                    <div class="category-content">
+                        <h3>Smart Cities</h3>
+                        <p>Learn about cities built with technology for improved sustainability, infrastructure, and quality of life.</p>
+                        <button class="learn-more-btn" onclick="showPopup('Smart Cities', 'Smart cities utilize IoT, AI, and other technologies to create efficient, sustainable environments.')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Read More Popup -->
+<div id="readMorePopup" class="read-more-popup">
+    <button class="close-btn" onclick="closePopup()">×</button>
+    <h4 id="popupTitle"></h4>
+    <div id="popupContent" class="read-more-popup-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const categoryCarousel = document.getElementById('categoryCarousel');
+
+    categoryCarousel.addEventListener('slid.bs.carousel', function() {
+        const activeItems = categoryCarousel.querySelectorAll('.carousel-item');
+        if (activeItems.length > 0) {
+            categoryCarousel.querySelector('.carousel-inner').appendChild(activeItems[0]);
+        }
+    });
+
+    function showPopup(title, content) {
+        document.getElementById('popupTitle').innerText = title;
+        document.getElementById('popupContent').innerText = content;
+        document.getElementById('readMorePopup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('readMorePopup').style.display = 'none';
+    }
+</script>
+
+<section class="email-subscription">
+    <h2 class="subscription-title">Stay Connected!</h2>
+    <p class="subscription-text">Stay updated on the hottest new ideas and community activities.</p>
+    <form class="subscription-form">
+        <input type="email" placeholder="Enter your email address" class="email-input" required>
+        <button type="submit" class="subscribe-button">Subscribe</button>
+    </form>
+</section>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                <li><a href="terms service.html">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/"><img src="facebook2.gif" alt="Facebook"></a></li>
+                <li><a href="https://x.com/"><img src="twiter.png" alt="Twitter"></a></li>
+                <li><a href="https://www.instagram.com/"><img src="instagram.gif" alt="Instagram"></a></li>
+                <li><a href="https://www.linkedin.com/"><img src="linked-in.png" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
+        <div class="secondary-nav">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ideas.html">Ideas</a></li>
+                <li><a href="how it works.html">How It works</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                 <li><a href="login_sign_form.html">Sign Up</a></li>
+                 <li><a href="login_sign_form.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Crowdsourced Idea Incubator. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Crowdsourced Idea Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            background-color: rgb(4, 37, 41);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* Close Button */
+        .close-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* 3D Scrollable Content */
+        .content {
+            perspective: 800px;
+            overflow-y: auto;
+            height: 100vh;
+            scroll-snap-type: y mandatory;
+            padding-left: 20px; /* space for scrollbar */
+            padding-right: 20px; /* space for scrollbar */
+        }
+
+        /* Section Styling */
+        .section {
+            scroll-snap-align: start;
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #0a0101;
+            border-radius: 10px;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: rotateX(5deg) translateZ(-100px);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        /* Indicator Circle */
+        .indicator {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            width: 12px;
+            height: 12px;
+            background-color: #6f42c1;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            transition: background-color 0.3s ease;
+        }
+
+        /* Section Content Styling */
+        h1, h2 {
+            text-align: center;
+            color: #6f42c1;
+            margin-bottom: 10px;
+        }
+
+        p, .section-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: center;
+            color: #eee;
+        }
+
+        /* Active 3D Effect */
+        .section.active {
+            transform: translateZ(0) rotateX(0deg);
+            opacity: 1;
+        }
+
+        /* Highlight Active Indicator */
+        .section.active .indicator {
+            background-color: #ff4c4c;
+        }
+
+        /* Custom Dual Scrollbars */
+        .content::-webkit-scrollbar {
+            width: 12px;
+        }
+        .content::-webkit-scrollbar-track {
+            background: rgb(4, 37, 41);
+        }
+        .content::-webkit-scrollbar-thumb {
+            background-color: #6f42c1;
+            border-radius: 6px;
+            border: 3px solid rgb(4, 37, 41);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                width: 90%;
+                padding: 20px;
+            }
+            h1, h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Close Button -->
+    <button class="close-button" onclick="window.location.href='index.html'"><i class="fas fa-times"></i></button>
+
+    <div class="content" id="content">
+        
+        <!-- Terms of Service Section -->
+        <div class="section" id="terms-of-service">
+            <div class="indicator"></div>
+            <h1>Terms of Service</h1>
+            <p>These Terms of Service govern your use of Crowdsourced Idea Incubator's platform. By using our platform, you agree to abide by these terms.</p>
+        </div>
+
+        <!-- Section 1 - Acceptance of Terms -->
+        <div class="section" id="acceptance-terms">
+            <div class="indicator"></div>
+            <h2>1. Acceptance of Terms</h2>
+            <div class="section-content">
+                By accessing or using our platform, you agree to comply with these terms and conditions. If you do not agree, you must discontinue using our services.
+            </div>
+        </div>
+
+        <!-- Section 2 - User Responsibilities -->
+        <div class="section" id="user-responsibilities">
+            <div class="indicator"></div>
+            <h2>2. User Responsibilities</h2>
+            <div class="section-content">
+                You are responsible for the content you post and the interactions you have on the platform. You must not post anything harmful, offensive, or illegal.
+            </div>
+        </div>
+
+        <!-- Section 3 - Limitation of Liability -->
+        <div class="section" id="limitation-liability">
+            <div class="indicator"></div>
+            <h2>3. Limitation of Liability</h2>
+            <div class="section-content">
+                We are not liable for any indirect, incidental, or consequential damages arising from your use of our platform.
+            </div>
+        </div>
+
+        <!-- Section 4 - Termination -->
+        <div class="section" id="termination">
+            <div class="indicator"></div>
+            <h2>4. Termination</h2>
+            <div class="section-content">
+                We reserve the right to suspend or terminate your access to the platform at any time for violating these terms.
+            </div>
+        </div>
+
+        <!-- Section 5 - Changes to the Terms -->
+        <div class="section" id="changes-to-terms">
+            <div class="indicator"></div>
+            <h2>5. Changes to the Terms</h2>
+            <div class="section-content">
+                We may update these terms periodically. Please check this page regularly to stay informed of any changes.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to add the 3D scroll effect
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>header</title>
+    <link rel="stylesheet" href="ideas.css">
+    
+  </head>
+  
+  <header>
+    <a href="#" class="logo">
+        <img src="logo.png" alt="Logo">
+    </a>
+    <div class="header-links">
+    <a href="index.html">Home</a>
+       <a href="ideas.html">Ideas</a>
+       <a href="how it works.html">How It works</a>
+      <a href="categories">Categories</a>
+      <a href="about us.html">About Us</a>
+      <div class="login-sign-buttons">
+        <a href="login_sign_form.html"><button class="sign-button">Sign Up</button></a>
+        <a href="login_sign_form.html"><button class="login-button">login</button></a>
+        
+        
+          </div>
+  </header>
+  <body>
+    
+    
+<div class="carousel-container">
+    <div class="carousel">
+        <!-- Dynamic Carousel Items will go here -->
+    </div>
+    <button class="carousel-button prev" onclick="prevIdea()">&#10094;</button>
+    <button class="carousel-button next" onclick="nextIdea()">&#10095;</button>
+</div>
+
+<div id="learn-more-popup">
+    <div id="popup-content">
+        <h3 id="idea-title"></h3>
+        <p id="idea-description"></p>
+        <button class="close-btn" onclick="closeLearnMore()">Close</button>
+    </div>
+</div>
+
+<script>
+    const ideas = [
+        { title: "Smart Agriculture", description: "Innovative farming solutions using technology.", funding: "$10 Million", achiever: "John Doe", location: "USA", image:"smart agri.jpg" },
+        { title: "Clean Energy", description: "Renewable energy solutions to power the future.", funding: "$20 Million", achiever: "Jane Smith", location: "Canada", image: "clean energy.jpg" },
+        { title: "AI Healthcare", description: "Using AI to improve healthcare services.", funding: "$15 Million", achiever: "Alex Johnson", location: "Germany", image: "ai health care.jpg" },
+        { title: "Space Exploration", description: "Innovative ideas for exploring outer space.", funding: "$50 Million", achiever: "Emily Davis", location: "USA", image: "space explor.jpg" },
+        { title: "Green Cities", description: "Urban development with sustainability in mind.", funding: "$30 Million", achiever: "Michael Lee", location: "Australia", image: "green.jpg" },
+        { title: "Electric Aviation", description: "Electric-powered planes for eco-friendly travel.", funding: "$40 Million", achiever: "David Martinez", location: "USA", image: "electric aviation.jpg" },
+        { title: "Smart Homes", description: "Automated homes with IoT integration.", funding: "$5.5 Million", achiever: "Oliver Wright", location: "USA", image: "smart home.jpg" },
+        
+        { title: "Clean Water Access", description: "Providing clean water to underserved communities.", funding: "$10 Million", achiever: "Jack Wilson", location: "Kenya", image: "clean water.jpg" },
+        { title: "E-Vehicles for Public Transport", description: "Electric vehicles designed for public transport systems.", funding: "$6 Million", achiever: "Sophie Davis", location: "France", image: "e-vehicle.jpg" },
+        { title: "Sustainable Packaging", description: "Creating packaging solutions that are eco-friendly.", funding: "$8 Million", achiever: "Daniel Scott", location: "South Africa", image: "sus parking.jpg" }
+    ];
+
+    const carousel = document.querySelector('.carousel');
+
+    // Create carousel items
+    ideas.forEach((idea, index) => {
+        const item = document.createElement('div');
+        item.classList.add('carousel-item');
+        if (index === 0) item.classList.add('active'); // Set the first item as active
+
+        item.innerHTML = `
+            <img src="${idea.image}" alt="${idea.title}">
+            <h3>${idea.title}</h3>
+            <p>${idea.description}</p>
+            <div class="funding">Funding: ${idea.funding}</div>
+            <div class="achiever">Achiever: ${idea.achiever}</div>
+            <div class="location">Location: ${idea.location}</div>
+            <button onclick="showLearnMore('${idea.title}', '${idea.description}')">Learn More</button>
+        `;
+        carousel.appendChild(item);
+    });
+
+    let currentIndex = 0;
+
+    function nextIdea() {
+        currentIndex = (currentIndex + 1) % ideas.length; // Loops back to the start
+        updateCarousel();
+    }
+
+    function prevIdea() {
+        currentIndex = (currentIndex - 1 + ideas.length) % ideas.length; // Loops to the end
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const items = document.querySelectorAll('.carousel-item');
+        items.forEach((item, index) => {
+            item.classList.remove('active');
+            if (index === currentIndex) {
+                item.classList.add('active');
+            }
+        });
+
+        const carouselWidth = items[0].clientWidth + 20; // Including margin
+        carousel.style.transform = `translateX(-${carouselWidth * currentIndex}px)`;
+    }
+
+    function showLearnMore(title, description) {
+        document.getElementById('idea-title').textContent = title;
+        document.getElementById('idea-description').textContent = description;
+        document.getElementById('learn-more-popup').style.display = 'flex';
+    }
+
+    function closeLearnMore() {
+        document.getElementById('learn-more-popup').style.display = 'none';
+    }
+</script>
+    <section class="email-subscription">
+        <h2 class="subscription-title">Stay Connected!</h2>
+        <p class="subscription-text">Stay updated on the hottest new ideas and community activities.</p>
+        <form class="subscription-form">
+            <input type="email" placeholder="Enter your email address" class="email-input" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a href="terms service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/"><img src="facebook2.gif" alt="Facebook"></a></li>
+                    <li><a href="https://x.com/"><img src="twiter.png" alt="Twitter"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="instagram.gif" alt="Instagram"></a></li>
+                    <li><a href="https://www.linkedin.com/"><img src="linked-in.png" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+            <div class="secondary-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ideas.html">Ideas</a></li>
+                    <li><a href="how it works.html">How It works</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                     <li><a href="login_sign_form.html">Sign Up</a></li>
+                     <li><a href="login_sign_form.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Crowdsourced Idea Incubator. All rights reserved.</p>
+        </div>
+    </footer>
+    
+  </body>
+</html>

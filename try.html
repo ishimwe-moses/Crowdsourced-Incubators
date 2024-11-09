@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Crowdsourced Idea Incubator</title>
+    <style>
+      /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    width: 100%;
+    background-color: rgb(4, 37, 41);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-column {
+    padding-right: 10px;
+}
+
+.right-column {
+    max-width: 400px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: #6f42c1;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.header-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.login-sign-buttons button {
+    background-color: #6f42c1;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 12px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #6f42c1;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+/* FAQ Section */
+.faq-wrapper {
+    display: none;
+    margin-top: 40px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .right-column {
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .left-column {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .right-column {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    header a.logo img {
+        height: 40px;
+    }
+
+    .header-links a, .login-sign-buttons button {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .next-button, .finish-button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .step-content, .faq-wrapper {
+        padding: 15px;
+    }
+
+    .faq-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .faq-item p {
+        font-size: 0.9rem;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+<header>
+    <a href="#" class="logo"><img src="logo.png" alt="Logo"></a>
+    <div class="header-links">
+        <a href="index.html">Home</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="how it works.html">How It Works</a>
+        <a href="categories">Categories</a>
+        <a href="about us.html">About Us</a>
+    </div>
+    <div class="login-sign-buttons">
+        <a href="login_sign_form.html"><button class="sign-button">Sign Up</button></a>
+        <a href="login_sign_form.html"><button class="login-button">Login</button></a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="left-column">
+        <h1>How It Works</h1>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div id="step1" class="step-wrapper">
+            <div class="step-content">
+                <h3>Step 1: Introduction</h3>
+                <p>This is where the introduction happens. Learn about how to submit and collaborate with innovators!</p>
+            </div>
+        </div>
+
+        <div id="step2" class="step-wrapper" style="display:none;">
+            <div class="step-content">
+                <h3>Step 2: Submit Your Idea</h3>
+                <p>Once you sign up, submit your innovative idea! It's quick and easy.</p>
+            </div>
+        </div>
+
+        <div id="step3" class="step-wrapper" style="display:none;">
+            <div class="step-content">
+                <h3>Step 3: Collaborate with Innovators</h3>
+                <p>After submitting, engage with other innovators to enhance your idea.</p>
+            </div>
+        </div>
+
+        <div id="faqSection" class="faq-wrapper">
+            <div id="faq1" class="faq-item">
+                <h3>How do I submit my idea?</h3>
+                <p>Simply log in to your account, click "Submit Idea" from the dashboard, and fill in the required details. Our team will review your submission.</p>
+            </div>
+            <div id="faq2" class="faq-item" style="display:none;">
+                <h3>Is there a fee to use the platform?</h3>
+                <p>No, joining and submitting your idea is completely free. We also offer additional paid services if you need more personalized support.</p>
+            </div>
+        </div>
+
+        <button class="finish-button" id="finishButton" onclick="finishStep()">Finish</button>
+        <button class="next-button" id="nextButton" onclick="goToNextStep()">Next</button>
+    </div>
+
+    <div class="right-column">
+        <video id="introVideo" width="100%" controls>
+            <source src="1.Dyna song.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script>
+    let currentStep = 1;
+    const totalSteps = 7; 
+    const progressBar = document.getElementById("progressBar");
+
+    function goToNextStep() {
+        const progress = (currentStep / totalSteps) * 100;
+        progressBar.style.width = `${progress}%`;
+        document.getElementById(`step${currentStep}`).style.display = 'none';
+        currentStep++;
+        if (currentStep <= 3) document.getElementById(`step${currentStep}`).style.display = 'block';
+    }
+
+    function finishStep() {
+        alert("Congratulations! You've completed the process.");
+    }
+</script>
+
+</body>
+</html>
